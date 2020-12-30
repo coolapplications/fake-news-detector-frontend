@@ -1,0 +1,29 @@
+<form
+  [formGroup]="predictionForm"
+  (ngSubmit)="onSubmit()"
+  class="form-container"
+>
+  <h1>Fake news detector using deep learning!</h1>
+  <h4>Follow the next steps for an accurate prediction:</h4>
+  <ol>
+    <li>Select the correct language</li>
+    <li>Paste the posible fake news text</li>
+    <li>Click on predict</li>
+  </ol>
+  <mat-form-field appearance="fill">
+    <mat-label>Language</mat-label>
+    <mat-select formControlName="language" required>
+      <mat-option value="es">Spanish</mat-option>
+      <mat-option value="en">English</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <h4>The news is fake - 0.80</h4>
+  <mat-form-field appearance="fill">
+    <mat-label>Paste text here</mat-label>
+    <textarea matInput rows="20" formControlName="news" required></textarea>
+  </mat-form-field>
+  <br />
+  <button mat-raised-button type="submit" [disabled]="!predictionForm.valid">
+    predict
+  </button>
+</form>
