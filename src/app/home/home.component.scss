@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div-container {
+  display: flex;
+  flex-direction: column;
+}

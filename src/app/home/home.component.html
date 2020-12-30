@@ -1,1 +1,30 @@
-<p>home works!</p>
+<div class="div-container">
+  <mat-toolbar>
+    <span>Fake news detection</span>
+  </mat-toolbar>
+  <form>
+    <h4>Follow the next steps for an accurate prediction:</h4>
+    <ol>
+      <li>Select the correct language</li>
+      <li>Paste the posible fake news text</li>
+      <li>Click on predict</li>
+    </ol>
+    <mat-form-field appearance="fill">
+      <mat-label>Language</mat-label>
+      <mat-select>
+        <mat-option value="es">Spanish</mat-option>
+        <mat-option value="en">English</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Paste text here</mat-label>
+      <textarea
+        matInput
+        matTextareaAutosize
+        [matAutosizeMinRows]="20"
+      ></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">predict</button>
+  </form>
+</div>
