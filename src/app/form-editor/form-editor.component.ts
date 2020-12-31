@@ -9,7 +9,9 @@ import { HttpClient } from '@angular/common/http';
 export class FormEditorComponent implements OnInit {
   predictionForm!: FormGroup;
   result: any;
-  endpoint = 'http://localhost:5000/predict';
+  isAny = false;
+  // endpoint = 'http://localhost:5000/predict';
+  endpoint = 'http://ec2-3-215-16-21.compute-1.amazonaws.com:5000/predict';
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
   ngOnInit(): void {
     this.predictionForm = this.formBuilder.group({
@@ -26,7 +28,8 @@ export class FormEditorComponent implements OnInit {
   }
 
   onSubmit() {
-    /* if (this.predictionForm.invalid) {
+    this.isAny = true;
+    if (this.predictionForm.invalid) {
       return;
     }
     this.http
@@ -34,12 +37,13 @@ export class FormEditorComponent implements OnInit {
         text: this.predictionForm.value.news,
       })
       .subscribe((data) => {
+        this.isAny = false;
         this.result = data;
+        this.result.value = parseFloat(this.result.value).toFixed(2);
       });
-  } */
-    this.result = {
+  }
+  /*  this.result = {
       fake: 'True',
       value: '0.9637991',
-    };
-  }
+    }; */
 }

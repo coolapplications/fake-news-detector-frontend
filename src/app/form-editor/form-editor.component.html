@@ -3,7 +3,7 @@
   (ngSubmit)="onSubmit()"
   class="form-container"
 >
-  <h1>Fake news detector using deep learning!</h1>
+  <h1>DEEP LEARNING FAKE NEWS DETECTOR!</h1>
   <h4>Follow the next steps for an accurate prediction:</h4>
   <ol>
     <li>Select the correct language</li>
@@ -17,16 +17,26 @@
       <mat-option value="english">English</mat-option>
     </mat-select>
   </mat-form-field>
+
   <h4 *ngIf="result">
-    The news is {{ result?.fake == "True" ? "Fake" : "True" }} -
-    {{ result.value }}
+    Result: The news is {{ result?.fake == "True" ? "FAKE" : "REAL" }}. The
+    probability of being fake is {{ result.value }}
   </h4>
+  <mat-spinner
+    class="spinner"
+    *ngIf="isAny"
+    mode="indeterminate"
+    diameter="20"
+    color="accent"
+  ></mat-spinner>
   <mat-form-field appearance="fill">
     <mat-label>Paste text here</mat-label>
     <textarea matInput rows="20" formControlName="news" required></textarea>
   </mat-form-field>
   <br />
   <button mat-raised-button type="submit" [disabled]="!predictionForm.valid">
-    predict
+    PREDICT
   </button>
+  <h5>Authors: Kevin Gallego, Andrés Alvarez</h5>
+  <h5>UdeA Students</h5>
 </form>
