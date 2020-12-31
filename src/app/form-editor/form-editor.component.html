@@ -13,11 +13,14 @@
   <mat-form-field appearance="fill">
     <mat-label>Language</mat-label>
     <mat-select formControlName="language" required>
-      <mat-option value="es">Spanish</mat-option>
-      <mat-option value="en">English</mat-option>
+      <mat-option value="spanish">Spanish</mat-option>
+      <mat-option value="english">English</mat-option>
     </mat-select>
   </mat-form-field>
-  <h4>The news is fake - 0.80</h4>
+  <h4 *ngIf="result">
+    The news is {{ result?.fake == "True" ? "Fake" : "True" }} -
+    {{ result.value }}
+  </h4>
   <mat-form-field appearance="fill">
     <mat-label>Paste text here</mat-label>
     <textarea matInput rows="20" formControlName="news" required></textarea>

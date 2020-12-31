@@ -10,6 +10,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -25,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatCardModule,
   ],
 })
 export class HomeModule {}
