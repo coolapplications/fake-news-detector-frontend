@@ -26,9 +26,10 @@
     class="spinner"
     *ngIf="isAny"
     mode="indeterminate"
-    diameter="20"
+    diameter="40"
     color="accent"
   ></mat-spinner>
+  <br />
   <mat-form-field appearance="fill">
     <mat-label>Paste text here</mat-label>
     <textarea matInput rows="20" formControlName="news" required></textarea>
@@ -37,6 +38,6 @@
   <button mat-raised-button type="submit" [disabled]="!predictionForm.valid">
     PREDICT
   </button>
-  <h5>Authors: Kevin Gallego, Andrés Alvarez</h5>
-  <h5>UdeA Students</h5>
+  <br />
+  <h5>Authors: Kevin Gallego, Andrés Alvarez<br />UdeA Students</h5>
 </form>
