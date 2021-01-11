@@ -45,8 +45,4 @@ export class FormEditorComponent implements OnInit {
         this.result.value = parseFloat(this.result.value).toFixed(2);
       });
   }
-  /*  this.result = {
-      fake: 'True',
-      value: '0.9637991',
-    }; */
 }
