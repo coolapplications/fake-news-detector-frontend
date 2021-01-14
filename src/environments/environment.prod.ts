@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  endpoint: 'http://ec2-3-215-16-21.compute-1.amazonaws.com:5000/predict',
+  endpoint: 'http://ec2-3-211-144-129.compute-1.amazonaws.com/predict',
 };
